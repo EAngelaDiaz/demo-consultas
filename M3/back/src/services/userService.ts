@@ -14,6 +14,11 @@ export const getUsersService = async (): Promise<IUser[]> => {
     return users;
 }
 
+export const getUsersByIdService = async (): Promise<void> => {
+    users = users.filter((user: IUser)=> {
+        return user.id == id
+   })
+}
 
 export const createUserService = async ( userData: UserDto): Promise<IUser> => {
     const newUser: IUser = {
